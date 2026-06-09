@@ -56,7 +56,7 @@ def main() -> None:
     args = parser.parse_args()
 
     failed = False
-    for path in sorted(args.font_dir.glob("*.ttf")):
+    for path in sorted(args.font_dir.rglob("*.ttf")):
         errors = validate_font(path)
         if errors:
             failed = True
@@ -70,4 +70,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -1,9 +1,10 @@
-# Blix PowerPoint / PDF Compatibility Fix
+# Blix and IBM Plex Sans TC-derived PowerPoint / PDF Compatibility Fix
 
 [繁體中文 README](README.md)
 
 This repository provides PowerPoint-compatible TrueType builds of
-**Blix (卜力士)**, a renamed derivative of IBM Plex Sans TC.
+**Blix (卜力士)** and **IBM Plex Sans TC-derived fonts**. Blix is a renamed
+derivative of IBM Plex Sans TC.
 
 These builds fix an issue where the fonts displayed correctly in PowerPoint,
 but Traditional Chinese characters became square boxes after PDF export. They
@@ -44,6 +45,8 @@ and PDF output.
 
 ## Downloads
 
+### Blix
+
 The eight repaired Blix weights are available in [`fonts/Blix`](fonts/Blix):
 
 - Blix Thin
@@ -54,6 +57,24 @@ The eight repaired Blix weights are available in [`fonts/Blix`](fonts/Blix):
 - Blix Medium
 - Blix SemiBold
 - Blix Bold
+
+### Public IBM Plex Sans TC-derived Fix
+
+The eight repaired IBM Plex Sans TC-derived weights are available in
+[`fonts/IBM-Plex-Sans-TC-derived-fix`](fonts/IBM-Plex-Sans-TC-derived-fix).
+
+Because IBM's SIL OFL agreement reserves the name `Plex`, publicly distributed
+modified builds cannot retain the original internal family name. These files
+therefore use the compliant new family name **PPT Sans TC Fix**:
+
+- PPT Sans TC Fix Thin
+- PPT Sans TC Fix ExtraLight
+- PPT Sans TC Fix Light
+- PPT Sans TC Fix Regular
+- PPT Sans TC Fix Text
+- PPT Sans TC Fix Medium
+- PPT Sans TC Fix SemiBold
+- PPT Sans TC Fix Bold
 
 ## Fixes
 
@@ -83,24 +104,24 @@ Run the included validator:
 
 ```powershell
 python -m pip install fonttools
-python tools/validate_fonts.py fonts/Blix
+python tools/validate_fonts.py fonts
 ```
 
 ## Installation
 
 1. Remove older Blix installations through Windows Settings or Control Panel.
 2. Restart Windows to clear stale Office and Windows font caches.
-3. Install every font in [`fonts/Blix`](fonts/Blix).
+3. Install every font in [`fonts/Blix`](fonts/Blix) or
+   [`fonts/IBM-Plex-Sans-TC-derived-fix`](fonts/IBM-Plex-Sans-TC-derived-fix).
 4. Enable **Embed fonts in the file** when saving a PowerPoint presentation.
 
 ## IBM Plex Sans TC
 
-The included repair tool can also be applied to IBM Plex Sans TC. Because
-`Plex` is a Reserved Font Name under the SIL OFL, this repository does not
-distribute modified builds that retain the original name.
-
-Download IBM Plex Sans TC from the
-[official IBM Plex repository](https://github.com/IBM/plex).
+This repository includes repaired IBM Plex Sans TC-derived builds. To comply
+with the Reserved Font Name clause, the public files use the internal family
+name **PPT Sans TC Fix**. The original design, glyphs, and copyrights remain
+with IBM and the original contributors. See the
+[IBM Plex Sans TC derivative notice](LICENSES/IBM-PLEX-SANS-TC-DERIVATIVE-NOTICE.md).
 
 ## License Agreements
 
@@ -112,8 +133,25 @@ corresponding files are:
 - [Blix SIL OFL 1.1 agreement](LICENSES/Blix-SIL-OFL-1.1.txt)
 - [Blix modification notice](LICENSES/Blix-MODIFICATION-NOTICE.md)
 - [IBM Plex Sans TC SIL OFL 1.1 agreement](LICENSES/IBM-Plex-Sans-TC-SIL-OFL-1.1.txt)
+- [IBM Plex Sans TC derivative notice](LICENSES/IBM-PLEX-SANS-TC-DERIVATIVE-NOTICE.md)
 - [IBM official original agreement](OFL.txt)
 
-IBM's original agreement reserves the font name **Plex**. This derivative uses
-the renamed family **Blix / 卜力士** and declares no additional Reserved Font
-Names.
+IBM's original agreement reserves the font name **Plex**. The publicly
+distributed derivatives use the renamed families **Blix / 卜力士** and
+**PPT Sans TC Fix**, and declare no additional Reserved Font Names.
+
+## Project Paths
+
+- Blix fix project: <https://github.com/MullerLi/blix-powerpoint-pdf-fix>
+- Repaired Blix fonts: <https://github.com/MullerLi/blix-powerpoint-pdf-fix/tree/main/fonts/Blix>
+- Official IBM Plex project: <https://github.com/IBM/plex>
+- Official IBM Plex Sans TC package: <https://github.com/IBM/plex/tree/master/packages/plex-sans-tc>
+- Repaired IBM Plex Sans TC-derived fonts: <https://github.com/MullerLi/blix-powerpoint-pdf-fix/tree/main/fonts/IBM-Plex-Sans-TC-derived-fix>
+
+## Acknowledgements
+
+Thanks to IBM, the IBM Plex design team, Bold Monday, and every IBM Plex
+contributor for creating and sharing a high-quality typeface project that can
+be freely used, studied, modified, and redistributed. Thanks also to the SIL
+Open Font License for providing the open-font collaboration framework that
+makes Blix and this compatibility repair project possible.
