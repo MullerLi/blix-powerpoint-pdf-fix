@@ -115,7 +115,6 @@ python tools/validate_fonts.py fonts
 ## 授權協議
 
 本專案使用的正式協議是 **SIL Open Font License 1.1（SIL OFL 1.1）**。
-IBM Plex 與 Blix 沒有名為「SLC」的官方字型授權；若你所指的 SLC 是 SIL，
 對應文件如下：
 
 - [Blix SIL OFL 1.1 協議](LICENSES/Blix-SIL-OFL-1.1.txt)
