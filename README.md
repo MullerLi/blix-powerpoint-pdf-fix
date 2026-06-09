@@ -8,6 +8,30 @@ IBM Plex Sans TC 改名衍生而來的字型。
 本修正版解決字型在 PowerPoint 中顯示正常，但輸出 PDF 後繁體中文字元全部變成
 方框的問題，並改善字型內嵌、PDF 子集化與 Windows 字型快取相容性。
 
+## 字型比較
+
+![IBM Plex Sans TC、Blix 與 Noto Sans CJK TC Regular 字型比較](assets/ibm-plex-blix-noto-comparison.jpg)
+
+圖中以相同文字比較 IBM Plex Sans TC、Blix 與 Noto Sans CJK TC Regular。
+Blix 延續 IBM Plex Sans TC 冷靜、清晰的工程感與接近正方形的中文字面結構，
+並以繁中文字形為主要設計方向。
+
+## 修正案案由
+
+本案使用的原始 IBM Plex Sans TC TTF 在製作 PowerPoint 簡報時，可能出現字元
+顯示錯誤。部分檔案在 PowerPoint 編輯畫面中看似正常，但在儲存內嵌字型的簡報、
+跨電腦開啟，或輸出 PDF 時，繁體中文字元可能變成方框、遺失，或被替換成其他
+系統字型。由 IBM Plex Sans TC 衍生與合併開發的 Blix 也繼承了相同問題。
+
+經檢查後確認，受影響字型雖然具有完整的 Unicode format 12 對照表，但 Windows
+常用的 BMP `cmap` format 4 對照表是空的。PowerPoint 編輯畫面可能透過其他
+Unicode 對照或字型替代機制正常顯示；然而 Office 的字型內嵌、PDF 輸出與字型
+子集化流程可能讀取 format 4，導致中文字元無法正確映射至 glyph。
+
+因此，本修正案的目的不是重新設計字形，而是在保留原始字型輪廓、排版度量與設計
+特徵的前提下，修復 Unicode 對照、內嵌權限相關 metadata、PDF 字重 metadata、
+版本識別與 checksum，使字型能穩定用於簡報製作、跨裝置分享與 PDF 輸出。
+
 ## 下載
 
 修復後的 8 個 Blix 字重位於 [`fonts/Blix`](fonts/Blix)：
@@ -77,4 +101,3 @@ IBM Plex 與 Blix 沒有名為「SLC」的官方字型授權；若你所指的 S
 
 IBM 原始協議將 **Plex** 指定為 Reserved Font Name。本衍生版本使用重新命名後的
 **Blix / 卜力士**，且未新增其他 Reserved Font Name。
-

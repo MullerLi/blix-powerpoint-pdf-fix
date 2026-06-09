@@ -10,6 +10,38 @@ but Traditional Chinese characters became square boxes after PDF export. They
 also improve font embedding, PDF subsetting, and Windows font-cache
 compatibility.
 
+## Typeface Comparison
+
+![Comparison of IBM Plex Sans TC, Blix, and Noto Sans CJK TC Regular](assets/ibm-plex-blix-noto-comparison.jpg)
+
+The image compares IBM Plex Sans TC, Blix, and Noto Sans CJK TC Regular using
+the same text. Blix retains IBM Plex Sans TC's calm, clear engineering
+character and near-square Chinese proportions while focusing on Traditional
+Chinese glyph forms.
+
+## Project Rationale
+
+The original IBM Plex Sans TC TTF files used in this project could cause
+character-display errors when creating PowerPoint presentations. Some files
+appeared correct in the PowerPoint editor, but Traditional Chinese characters
+could become square boxes, disappear, or be substituted with another system
+font when the presentation embedded fonts, was opened on another computer, or
+was exported to PDF. Blix, developed as a derivative and merged build of IBM
+Plex Sans TC, inherited the same issue.
+
+Investigation showed that the affected fonts contained complete Unicode
+format-12 mappings, while the Windows BMP `cmap` format-4 mappings were empty.
+PowerPoint's editing view could still display text through another Unicode
+mapping or font-substitution path. However, Office font embedding, PDF export,
+and font-subsetting workflows may rely on format 4, preventing Chinese
+characters from mapping correctly to glyphs.
+
+This project therefore does not redesign the glyphs. It preserves the original
+outlines, metrics, and design characteristics while repairing Unicode mappings,
+embedding-related metadata, PDF weight metadata, version identifiers, and
+checksums so the fonts work reliably in presentations, cross-device sharing,
+and PDF output.
+
 ## Downloads
 
 The eight repaired Blix weights are available in [`fonts/Blix`](fonts/Blix):
@@ -85,4 +117,3 @@ corresponding files are:
 IBM's original agreement reserves the font name **Plex**. This derivative uses
 the renamed family **Blix / 卜力士** and declares no additional Reserved Font
 Names.
-
