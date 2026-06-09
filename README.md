@@ -1,14 +1,16 @@
-# Blix PowerPoint / PDF Fix
+# Blix 卜力士 PowerPoint / PDF 相容修正版
 
-PowerPoint-compatible TrueType builds of **Blix (卜力士)**, a renamed
-derivative of IBM Plex Sans TC.
+[English README](README.en.md)
 
-These builds fix an issue where slides displayed correctly in PowerPoint but
-exported PDFs showed Traditional Chinese characters as square boxes.
+本專案提供 **Blix（卜力士）** 的 PowerPoint 相容 TrueType 修正版。Blix 是由
+IBM Plex Sans TC 改名衍生而來的字型。
 
-## Downloads
+本修正版解決字型在 PowerPoint 中顯示正常，但輸出 PDF 後繁體中文字元全部變成
+方框的問題，並改善字型內嵌、PDF 子集化與 Windows 字型快取相容性。
 
-The repaired fonts are in [`fonts/Blix`](fonts/Blix):
+## 下載
+
+修復後的 8 個 Blix 字重位於 [`fonts/Blix`](fonts/Blix)：
 
 - Blix Thin
 - Blix ExtraLight
@@ -19,56 +21,60 @@ The repaired fonts are in [`fonts/Blix`](fonts/Blix):
 - Blix SemiBold
 - Blix Bold
 
-## What was fixed
+## 修復內容
 
-- Populated the empty Windows BMP Unicode mapping tables:
-  - `cmap` platform `3`, encoding `1`, format `4`
-  - `cmap` platform `0`, encoding `3`, format `4`
-- Preserved the complete format-12 Unicode mappings, including non-BMP
-  characters.
-- Confirmed `OS/2.fsType = 0`, allowing installable embedding.
-- Normalized `Blix-Text` weight metadata from `450` to `400` for PDF
-  compatibility.
-- Updated font revision and unique IDs to prevent Windows from reusing stale
-  cached font data.
-- Recalculated TrueType checksums and validated all font tables.
+- 補齊原本為空的 Windows BMP Unicode 對照表：
+  - `cmap` platform `3`、encoding `1`、format `4`
+  - `cmap` platform `0`、encoding `3`、format `4`
+- 保留完整的 format 12 Unicode 對照，包括非 BMP 字元。
+- 確認 `OS/2.fsType = 0`，允許字型安裝及內嵌。
+- 將 `Blix-Text` 的非標準字重 metadata 由 `450` 正規化為 `400`。
+- 更新字型版本與 Unique ID，降低 Windows 重複使用舊字型快取的機率。
+- 重新計算 TrueType checksum 並驗證所有字型表格。
 
-## Validation
+## 驗證結果
 
-The repaired builds passed:
+修復後的字型已通過：
 
-- Windows `T2Embed.dll` full-font embedding
-- Windows `T2Embed.dll` subset embedding
-- PowerPoint font embedding
-- PowerPoint PDF export
-- PDF embedded-font inspection
-- Traditional Chinese PDF text extraction
+- Windows `T2Embed.dll` 完整字型內嵌
+- Windows `T2Embed.dll` 子集字型內嵌
+- PowerPoint 字型內嵌
+- PowerPoint 輸出 PDF
+- PDF 內嵌字型檢查
+- PDF 繁體中文文字抽取
 
-Run the included validator:
+可使用附帶工具再次驗證：
 
 ```powershell
 python -m pip install fonttools
 python tools/validate_fonts.py fonts/Blix
 ```
 
-## Installation
+## 安裝方式
 
-1. Remove older Blix installations from Windows Settings or Control Panel.
-2. Restart Windows to clear stale Office and Windows font caches.
-3. Install all files from `fonts/Blix`.
-4. In PowerPoint, enable **Embed fonts in the file** when saving.
+1. 從 Windows 設定或控制台移除舊版 Blix。
+2. 重新啟動 Windows，以清除 Office 與 Windows 的舊字型快取。
+3. 安裝 [`fonts/Blix`](fonts/Blix) 內的全部字型。
+4. PowerPoint 儲存簡報時，啟用「將字型內嵌於檔案」。
 
-## Notes on IBM Plex Sans TC
+## IBM Plex Sans TC
 
-The same repair tool can be applied locally to IBM Plex Sans TC. Modified
-builds retaining the reserved `Plex` name are not distributed here. Download
-the official IBM Plex source from <https://github.com/IBM/plex>.
+本專案的修復工具也能套用於 IBM Plex Sans TC。IBM Plex 的 `Plex` 是 SIL OFL
+指定的 Reserved Font Name，因此本專案不散布保留原名稱的修改版本。
 
-## License
+請從 [IBM 官方 Plex repository](https://github.com/IBM/plex) 下載 IBM Plex Sans TC。
 
-Blix is distributed under the SIL Open Font License 1.1 inherited from IBM
-Plex. See [`OFL.txt`](OFL.txt).
+## 授權協議
 
-IBM's original license reserves the font name **Plex**. This derivative uses
-the renamed family **Blix / 卜力士**.
+本專案使用的正式協議是 **SIL Open Font License 1.1（SIL OFL 1.1）**。
+IBM Plex 與 Blix 沒有名為「SLC」的官方字型授權；若你所指的 SLC 是 SIL，
+對應文件如下：
+
+- [Blix SIL OFL 1.1 協議](LICENSES/Blix-SIL-OFL-1.1.txt)
+- [Blix 衍生修改聲明](LICENSES/Blix-MODIFICATION-NOTICE.md)
+- [IBM Plex Sans TC SIL OFL 1.1 協議](LICENSES/IBM-Plex-Sans-TC-SIL-OFL-1.1.txt)
+- [IBM 官方原始協議](OFL.txt)
+
+IBM 原始協議將 **Plex** 指定為 Reserved Font Name。本衍生版本使用重新命名後的
+**Blix / 卜力士**，且未新增其他 Reserved Font Name。
 
