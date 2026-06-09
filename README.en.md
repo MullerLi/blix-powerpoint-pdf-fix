@@ -127,9 +127,7 @@ with IBM and the original contributors. See the
 ## License Agreements
 
 The applicable official agreement is the
-**SIL Open Font License 1.1 (SIL OFL 1.1)**. There is no official font license
-named “SLC” for IBM Plex or Blix; if “SLC” was intended to mean “SIL,” the
-corresponding files are:
+**SIL Open Font License 1.1 (SIL OFL 1.1)**.
 
 - [Blix SIL OFL 1.1 agreement](LICENSES/Blix-SIL-OFL-1.1.txt)
 - [Blix modification notice](LICENSES/Blix-MODIFICATION-NOTICE.md)
