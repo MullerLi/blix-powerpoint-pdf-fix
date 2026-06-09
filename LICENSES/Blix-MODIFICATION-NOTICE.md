@@ -1,8 +1,9 @@
 # Blix 衍生修改聲明 / Modification Notice
 
-Blix（卜力士）是 IBM Plex Sans TC 的改名衍生版本。
+Blix（卜力士）是基於 IBM Plex Sans TC 與 cathree3/Plix 上游專案的改名衍生版本。
 
-Blix (卜力士) is a renamed derivative of IBM Plex Sans TC.
+Blix (卜力士) is a renamed derivative based on the IBM Plex Sans TC and
+cathree3/Plix upstream projects.
 
 ## 原始字型 / Original Font
 
@@ -11,6 +12,7 @@ Blix (卜力士) is a renamed derivative of IBM Plex Sans TC.
 - 原始協議 / Original license: SIL Open Font License 1.1
 - Reserved Font Name: `Plex`
 - 官方來源 / Official source: <https://github.com/IBM/plex>
+- 上游衍生專案 / Upstream derivative project: <https://github.com/cathree3/Plix>
 
 ## 本版本修改 / Modifications in This Build
 
@@ -33,4 +35,3 @@ Blix (卜力士) is a renamed derivative of IBM Plex Sans TC.
 This derivative does not use the original Reserved Font Name `Plex`; it uses
 `Blix / 卜力士`. The modified font remains entirely under the SIL Open Font
 License 1.1 and declares no additional Reserved Font Names.
-

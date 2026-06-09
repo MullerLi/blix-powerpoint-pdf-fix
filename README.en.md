@@ -3,8 +3,9 @@
 [繁體中文 README](README.md)
 
 This repository provides PowerPoint-compatible TrueType builds of
-**Blix (卜力士)** and **IBM Plex Sans TC-derived fonts**. Blix is a renamed
-derivative of IBM Plex Sans TC.
+**Blix (卜力士)** and **IBM Plex Sans TC-derived fonts**. Blix is based on the
+IBM Plex Sans TC family and the
+[cathree3/Plix](https://github.com/cathree3/Plix) derivative typeface project.
 
 These builds fix an issue where the fonts displayed correctly in PowerPoint,
 but Traditional Chinese characters became square boxes after PDF export. They
@@ -28,7 +29,7 @@ appeared correct in the PowerPoint editor, but Traditional Chinese characters
 could become square boxes, disappear, or be substituted with another system
 font when the presentation embedded fonts, was opened on another computer, or
 was exported to PDF. Blix, developed as a derivative and merged build of IBM
-Plex Sans TC, inherited the same issue.
+Plex Sans TC and Plix, inherited the same issue.
 
 Investigation showed that the affected fonts contained complete Unicode
 format-12 mappings, while the Windows BMP `cmap` format-4 mappings were empty.
@@ -140,18 +141,18 @@ IBM's original agreement reserves the font name **Plex**. The publicly
 distributed derivatives use the renamed families **Blix / 卜力士** and
 **PPT Sans TC Fix**, and declare no additional Reserved Font Names.
 
-## Project Paths
+## Upstream Project Paths
 
-- Blix fix project: <https://github.com/MullerLi/blix-powerpoint-pdf-fix>
-- Repaired Blix fonts: <https://github.com/MullerLi/blix-powerpoint-pdf-fix/tree/main/fonts/Blix>
-- Official IBM Plex project: <https://github.com/IBM/plex>
+- Official IBM Plex typeface-family project: <https://github.com/IBM/plex>
 - Official IBM Plex Sans TC package: <https://github.com/IBM/plex/tree/master/packages/plex-sans-tc>
-- Repaired IBM Plex Sans TC-derived fonts: <https://github.com/MullerLi/blix-powerpoint-pdf-fix/tree/main/fonts/IBM-Plex-Sans-TC-derived-fix>
+- Plix derivative typeface project: <https://github.com/cathree3/Plix>
 
 ## Acknowledgements
 
 Thanks to IBM, the IBM Plex design team, Bold Monday, and every IBM Plex
 contributor for creating and sharing a high-quality typeface project that can
-be freely used, studied, modified, and redistributed. Thanks also to the SIL
-Open Font License for providing the open-font collaboration framework that
-makes Blix and this compatibility repair project possible.
+be freely used, studied, modified, and redistributed. Thanks to cathree3 and
+the Plix project for providing an important upstream foundation for Blix's
+derivative and merged development. Thanks also to the SIL Open Font License
+for providing the open-font collaboration framework that makes Blix and this
+compatibility repair project possible.
