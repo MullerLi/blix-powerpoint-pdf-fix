@@ -14,12 +14,27 @@ compatibility.
 
 ## Typeface Comparison
 
-![Comparison of IBM Plex Sans TC, Blix, and Noto Sans CJK TC Regular](assets/ibm-plex-blix-noto-comparison.jpg)
+![Comparison of IBM Plex Sans TC, Blix, and INK Sans TC](assets/ibm-plex-blix-ink-comparison.png)
 
-The image compares IBM Plex Sans TC, Blix, and Noto Sans CJK TC Regular using
-the same text. Blix retains IBM Plex Sans TC's calm, clear engineering
-character and near-square Chinese proportions while focusing on Traditional
-Chinese glyph forms.
+The image compares IBM Plex Sans TC, Blix, and INK Sans TC using the same text
+and size. INK Sans TC changes naming, Unicode mappings, and presentation
+compatibility only, so its glyph appearance remains identical to the source
+IBM Plex Sans TC. Blix is a merged derivative focused on Traditional Chinese
+glyph forms and broader language coverage.
+
+When this image was generated on June 9, 2026, the upstream Plix GitHub
+repository did not provide a directly renderable Plix font file. Its
+appearance is therefore not simulated in the image; the upstream definition
+and differences are documented in the table below.
+
+## Typeface Differences
+
+| Typeface | Position and source | Chinese glyphs and punctuation | Role in this project |
+| --- | --- | --- | --- |
+| IBM Plex Sans TC | IBM's official Traditional Chinese IBM Plex design and the source glyph baseline | Traditional Chinese forms, including Taiwan traditional print forms | Upstream original; modified builds cannot retain the Reserved Font Name `Plex` |
+| Plix (普力士) | A merged typeface from [cathree3/Plix](https://github.com/cathree3/Plix), filling TC from JP and then adding SC | Japanese glyph forms with corner-aligned punctuation | A related upstream derivative project; this repository does not distribute Plix fonts |
+| Blix (卜力士) | The Traditional Chinese-oriented merged typeface from the Plix project, filling JP from TC and then adding SC | Traditional Chinese glyph forms with centered punctuation | Repairs the existing empty BMP `cmap` while retaining Blix naming and glyphs |
+| INK Sans TC (墨黑體) | A compliantly renamed compatibility build derived from IBM Plex Sans TC | Identical to the source IBM Plex Sans TC; no glyph redesign | Repairs PowerPoint embedding, PDF output, and Unicode mappings without using the Reserved Font Name `Plex` |
 
 ## Project Rationale
 
@@ -59,23 +74,27 @@ The eight repaired Blix weights are available in [`fonts/Blix`](fonts/Blix):
 - Blix SemiBold
 - Blix Bold
 
-### Public IBM Plex Sans TC-derived Fix
+### INK Sans TC
 
 The eight repaired IBM Plex Sans TC-derived weights are available in
-[`fonts/IBM-Plex-Sans-TC-derived-fix`](fonts/IBM-Plex-Sans-TC-derived-fix).
+[`fonts/INK-Sans-TC`](fonts/INK-Sans-TC).
 
 Because IBM's SIL OFL agreement reserves the name `Plex`, publicly distributed
 modified builds cannot retain the original internal family name. These files
-therefore use the compliant new family name **PPT Sans TC Fix**:
+therefore use the compliant new family name **INK Sans TC**, localized as
+**墨黑體** in Traditional Chinese and **墨黑体** in Simplified Chinese:
 
-- PPT Sans TC Fix Thin
-- PPT Sans TC Fix ExtraLight
-- PPT Sans TC Fix Light
-- PPT Sans TC Fix Regular
-- PPT Sans TC Fix Text
-- PPT Sans TC Fix Medium
-- PPT Sans TC Fix SemiBold
-- PPT Sans TC Fix Bold
+The name is not `INK Plex Sans TC` because `Plex` is an IBM Reserved Font Name
+and cannot be used as a full name or as part of a Modified Version's name.
+
+- INK Sans TC Thin
+- INK Sans TC ExtraLight
+- INK Sans TC Light
+- INK Sans TC Regular
+- INK Sans TC Text
+- INK Sans TC Medium
+- INK Sans TC SemiBold
+- INK Sans TC Bold
 
 ## Fixes
 
@@ -113,14 +132,14 @@ python tools/validate_fonts.py fonts
 1. Remove older Blix installations through Windows Settings or Control Panel.
 2. Restart Windows to clear stale Office and Windows font caches.
 3. Install every font in [`fonts/Blix`](fonts/Blix) or
-   [`fonts/IBM-Plex-Sans-TC-derived-fix`](fonts/IBM-Plex-Sans-TC-derived-fix).
+   [`fonts/INK-Sans-TC`](fonts/INK-Sans-TC).
 4. Enable **Embed fonts in the file** when saving a PowerPoint presentation.
 
 ## IBM Plex Sans TC
 
 This repository includes repaired IBM Plex Sans TC-derived builds. To comply
 with the Reserved Font Name clause, the public files use the internal family
-name **PPT Sans TC Fix**. The original design, glyphs, and copyrights remain
+name **INK Sans TC**, localized as **墨黑體**. The original design, glyphs, and copyrights remain
 with IBM and the original contributors. See the
 [IBM Plex Sans TC derivative notice](LICENSES/IBM-PLEX-SANS-TC-DERIVATIVE-NOTICE.md).
 
@@ -137,7 +156,7 @@ The applicable official agreement is the
 
 IBM's original agreement reserves the font name **Plex**. The publicly
 distributed derivatives use the renamed families **Blix / 卜力士** and
-**PPT Sans TC Fix**, and declare no additional Reserved Font Names.
+**INK Sans TC / 墨黑體**, and declare no additional Reserved Font Names.
 
 ## Upstream Project Paths
 

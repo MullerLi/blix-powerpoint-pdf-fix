@@ -13,13 +13,12 @@ License 1.1.
 - `IBM-PLEX-SANS-TC-DERIVATIVE-NOTICE.md`：IBM Plex Sans TC 來源公開修正版
   的改名與修改聲明。
 
-IBM 原始協議將 `Plex` 指定為 Reserved Font Name。Blix 是重新命名後的衍生版本，
-未新增其他 Reserved Font Name。
+IBM 原始協議將 `Plex` 指定為 Reserved Font Name。Blix 與 INK Sans TC
+（墨黑體）是重新命名後的衍生版本，未新增其他 Reserved Font Name。
 
-IBM's original agreement reserves the name `Plex`. Blix is a renamed
-derivative and declares no additional Reserved Font Names.
+IBM's original agreement reserves the name `Plex`. Blix and INK Sans TC are
+renamed derivatives and declare no additional Reserved Font Names.
 
 The publicly distributed repaired IBM Plex Sans TC-derived builds use the new
-internal family name `PPT Sans TC Fix` to comply with the Reserved Font Name
+internal family name `INK Sans TC`, localized as `墨黑體`, to comply with the Reserved Font Name
 clause.
-
