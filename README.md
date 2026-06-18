@@ -1,4 +1,4 @@
-# Blix 卜力士與 IBM Plex Sans TC 來源字型 PowerPoint / PDF 相容修正版
+# IBM Plex Sans TC，PowerPoint / PDF 相容修正版
 
 [English README](README.en.md)
 
